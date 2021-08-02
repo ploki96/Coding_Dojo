@@ -1,0 +1,47 @@
+* {
+    background-color: antiquewhite;
+}
+
+#container{
+width:100%;
+height:100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav > h1{
+    font-size:30pt;
+    padding:20px;
+}
+
+.box{
+display: flex;
+justify-content: space-evenly;
+margin:50px 100px;
+}
+
+#box_one{
+    background-color: aqua;
+}
+
+#box_two{
+    background-color: pink;
+}
+
+#box_three{
+    background-color: white;
+}
+
+.cat{
+    height: 200px;
+    border: 2px solid black;
+}
+
+.cat > img {
+    height:100%;
+}
+

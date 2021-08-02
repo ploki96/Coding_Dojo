@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#calculator {
+    height: 600px;
+    width: 450px;
+}
+
+#row {
+    height: 16%;
+    width: 100%;
+}
+
+#id=

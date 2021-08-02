@@ -1,0 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#card {
+    display:flex;
+    flex-direction: column;
+    width:700px;
+    height:20%;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#top_half {
+    background-color: teal;
+    height: 90px;
+    border-bottom: 2px solid black;
+}
+
+#bot_half {
+    
+    height:280px;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+#location {
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    height: 15px;
+}
+
+.picture{
+    height: 80px;
+    position: relative;
+    top: 50px;
+    left:50px;
+}
+
+#name{
+    padding-top: 60px;
+    padding-left:20px;
+    font-size: 20pt;
+}
+
+#location {
+    padding-top: 10px;
+}
+
+.image {
+    padding-left:20px;
+    padding-right:10px;
+
+}
+
+.info{
+    padding-top:10px;
+    padding-left:20px;
+}
+
+#settings{
+    padding-top:40px;
+}
+

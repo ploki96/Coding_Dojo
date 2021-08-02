@@ -1,0 +1,123 @@
+* {
+    margin: 0 ;
+    padding: 0 ;
+    font-family: cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* Part 1 container */
+#container_p1 {
+    width:30%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+/* Universal Userbox */
+.userbox {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    height:250px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.userbox_top {
+    display: flex;
+    height:50%;
+}
+
+.userbox_topright {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+}
+
+.userbox_topright > button {
+    background-color: orange;
+    height: 37px;
+    width:60px;
+}
+
+.userbox_topleft{
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+
+.userbox_topleft > h2 {
+    padding-left:20px;
+    font-family: cursive;
+}
+
+.userbox_bot {
+    height:50%;
+    width: 100%;
+    align-items: center;
+}
+
+.userbox_bot > p {
+    padding-left: 20px;
+    font-family: cursive;
+    font-size: 12pt;
+}
+
+/* p2 container and nav setup */
+#container_p2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav  {
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 50px;
+    align-items: center
+}
+
+#nav > h1 {
+    padding-left: 20px;
+}
+
+
+
+#container_p2 > h1 {
+    margin: 30px auto;
+}
+
+#main_body {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+#main_body_left {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    height: 400px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main_body_left >img {
+    height:150px;
+    width:150px;
+}
+
+
+#main_body_right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}

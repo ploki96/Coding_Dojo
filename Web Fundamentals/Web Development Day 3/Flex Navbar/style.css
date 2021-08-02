@@ -1,0 +1,33 @@
+.nav {
+    color: white;
+    background-color: gray;
+}
+
+.nav, .nav-title, .nav-links {
+    display:flex;
+    justify-content:flex-start;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-links li{
+    justify-content:right;
+    padding:10px;
+    list-style-type: none;
+}
+
+.nav-title {
+    justify-content:left;
+    padding:10px;
+}
+
+a:link {
+    color: white;
+    text-decoration:none;
+}
+
+.btn {
+    background-color: aqua;
+    color:white;
+    box-shadow: 2px, 2px, 2px, black;
+}

@@ -1,0 +1,22 @@
+
+*{
+    background-color: grey;
+}
+
+#japan{
+    width: 900px;
+    height: 400px;
+    background-color: white;
+    display: inline-block;
+    border:2px solid black;
+}
+
+#dot{
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    background-color: red;
+    display: inline-block;
+    margin-left: 390px;
+    margin-top: 140px;
+}

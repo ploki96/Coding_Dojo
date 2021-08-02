@@ -1,0 +1,21 @@
+h1{
+color:aqua;
+background-color: black;
+font-size: 120;
+}
+
+h2{
+    font-style: italic;
+    background-color: blueviolet;
+    text-align: center;
+    color: white;
+    font-size: 80;
+}
+
+h3{
+    text-align: right;
+    background-color: aquamarine;
+    text-decoration: underline;
+    color: purple;
+    font-size: 60;
+}

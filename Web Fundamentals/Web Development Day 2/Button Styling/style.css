@@ -1,0 +1,22 @@
+#search{
+    border-radius: 40px;
+    border:80px 300px;
+    text-align: left;
+    border-color: aquamarine;
+    color: aquamarine;
+    background-color: white;
+}
+
+#plus{
+border-radius: 50%;
+border-color: aquamarine;
+color: white;
+background-color: aquamarine;
+}
+
+#account{
+    color: white;
+    border-color: black;
+    background-color: blue;
+    box-shadow: 10px;
+}

@@ -1,0 +1,151 @@
+* {
+    padding:0;
+    margin: 0;
+}
+
+
+/* NavBar */
+nav{
+    display:flex;
+    width:70%;
+    height:80px;
+    background-color:grey;
+    margin:auto;
+}
+
+#topleft {
+    display:flex;
+    width:70%;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+#topright {
+    display:flex;
+    width:30%;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+#topleft > p{
+    font-size:20pt;
+    padding-right: 15px;
+}
+
+#btn {
+    margin-right: 15px;
+    padding:3px 10px;
+    height: 25px;
+    width:100px;
+    font: 15pt;
+    background-color:darkcyan;
+    font-weight: bold;
+    color:white;
+}
+
+#search {
+    height:30px;
+    width:330px;
+}
+
+/* main container */
+#container{
+    width:70%;
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+}
+
+#left_column {
+    display: flex;
+    width:70%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 25px;
+}
+
+#right_column {
+    display: flex;
+    width:30%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 25px;
+}
+
+
+
+/* Left column */
+
+#leftup {
+    width:98%;
+    height: 180px;
+    display:flex;
+    justify-content: flex-start;
+    border:2px solid black;
+    }
+    
+#leftdown {
+    width:98%;
+    margin-top: 25px;
+    height: 180px;
+    display:flex;
+    justify-content: flex-start;
+    border:2px solid black;
+}
+
+.left {
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    width:70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.definition{
+    padding:8px;
+
+}
+
+.definition_two {
+    padding-bottom: 8px;
+}
+
+.button {
+    width:25%;
+    height:27px;
+    background-color: yellow;
+    box-shadow: 3px 3px 3px black;
+}
+
+/* Right column */
+#rightup {
+    width:98%;
+    height:160px;
+    padding-left: 7px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    border:2px solid black;
+}
+
+#rightup > button {
+    margin:10px;
+    width:90%;
+    height:40px;
+    background-color: green;
+}
+
+#rightup > p {
+    margin:20px;
+}
