@@ -14,7 +14,7 @@ person['eye_color'] = 'blue' # adds a dictionary value for eye_color
 print(fruit[2]) # prints an element from fruit output: banana
 
 if num1 > 45: # conditional statement, if else
-    print("It's greater") 
+    print("It's greater")  
 else:
     print("It's lower") # output: It's lower
 
