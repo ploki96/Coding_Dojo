@@ -16,8 +16,8 @@ for x in range(1, 101):
 
 # 4. Whoa. That Sucker's Huge - Add odd integers from 0 to 500,000, and print the final sum.
 sum = 0
-for x in range(500000):
-    if x % 2 == 0:
+for x in range(500001):
+    if x % 2 == 1:
         sum += x
 print(sum)
 
