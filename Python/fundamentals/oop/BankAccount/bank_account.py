@@ -9,17 +9,17 @@ class BankAccount:
         self.balance += amount
         return self
     def withdraw(self, amount):
-        self.balance -= amount
+        if self.balance < amount:
+            print("Insufficient funds: Charging a $5 fee")
+        else:
+            self.balance -= amount
         return self
     def display_account_info(self):
         print(f"Int Rate: {self.int_rate}%  Balance: ${self.balance}")
         return self
     def yield_interest(self):
-        if self.balance > 0:
+        if (self.balance > 0):
             self.balance *= (1 + self.int_rate/100)
-        else:
-            self.balance -= 5
-            print("Insufficient funds: Charging a $5 fee")
         return self
     def __repr__(self):
         print(f"Int Rate: {self.int_rate}%  Balance: ${self.balance}")
