@@ -68,6 +68,22 @@ dojo = {
 
 # own work
 
+# def printInfo(some_dict): 
+#     for i in some_dict:
+#         print(len(some_dict[i]), i.upper())
+#         for j in range(len(some_dict[i])):
+#             print(some_dict[i][j])
+
+# printInfo(dojo)
+
+# def printInfo(some_dict): 
+#     for i in range (len(some_dict)):
+#         print i
+#         print(len(some_dict['locations']))
+        # for j in range(len(some_dict[i])):
+        #     print(some_dict[i][j])
+
+# printInfo(dojo)
 
 def printInfo(some_dict): 
     for i in some_dict:
@@ -77,16 +93,6 @@ def printInfo(some_dict):
         print(" ")
 
 printInfo(dojo)
-
-# def printInfo(some_dict): 
-#     keys = some_dict.keys()
-#     for i in range (len(some_dict)):
-#         print(len(some_dict[keys[i]]))
-#         for j in range(len(some_dict[keys[i]])):
-#             print(some_dict[keys[i]][j])
-
-# printInfo(dojo)
-
 
 
 # output:
