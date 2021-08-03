@@ -17,7 +17,13 @@ class BankAccount:
     def yield_interest(self):
         if self.balance > 0:
             self.balance *= (1 + self.int_rate/100)
+        else:
+            self.balance -= 5
+            print("Insufficient funds: Charging a $5 fee")
         return self
+    def __repr__(self):
+        print(f"Int Rate: {self.int_rate}%  Balance: ${self.balance}")
+        return f"Int Rate: {self.int_rate}%  Balance: ${self.balance}"
     @classmethod
     def p_account(cls):
         print(cls.all_accounts)
