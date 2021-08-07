@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Gwate Numbwer Game</title>
+</head>
+<body>
+    <h1>Welcome to the Gwate Numbwer Game!</h1>
+    <h3>I am thinking of a number between 1 and 100</h3>
+    <h3>Attempts: {{session['attempts']}}</h3>
+    {% if session['message'] == "right_answer" %}
+        <div class="correct" style="background-color: green;">
+            <h1>"You got the right answer!"</h1>
+            <form action='/newgame'>
+                <input type="submit" name="new_game" value="Start a New Game">
+            </form>
+        </div>
+    {% elif session['message'] == "high_answer" %} 
+        <div class="wrong" style="background-color: red;">
+            <h1>"Why are you guessing so high?"</h1>
+        </div>
+    {% elif session['message'] == "low_answer" %}
+        <div class="wrong" style="background-color: red;">
+            <h1>"Why are you guessing so low?"</h1>
+        </div>
+    {% endif %}
+    <div class="input_section">
+    <h3>Take a guess!</h3>
+        <form action='/guess' method='POST'>
+            <input type="text" name="number_input" value="{{session['guess']}}">
+            <input type="submit" name="submit_button" value="submit">
+        </form>
+    </div>
+
+
+</body>
+</html>
