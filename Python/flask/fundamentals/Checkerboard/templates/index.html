@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerbwoad UWU</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="container">
+        <div id="title_box">
+            <h1 id="title"></h1>
+        </div>
+        <div>
+            {% for i in range(0,x) %} 
+                <div>
+                {% for j in range(0,y) %}
+                    {% if checker_board[i][j] == 0 %}
+                        <div class="first"></div>
+                    {% else: %}
+                        <div class="second"></div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
