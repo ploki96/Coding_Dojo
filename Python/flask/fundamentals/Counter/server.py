@@ -8,7 +8,7 @@ def index():
     if 'counter' not in session:
         session['counter'] = 0
     if 'visits' not in session:
-        session['visits'] = 0
+        session['visits'] = -1
     session['visits'] += 1
     return render_template("index.html")
 
@@ -24,9 +24,22 @@ def increment_counter():
     session['counter'] += 1
     return redirect('/')
 
+@app.route('/increase2')
+def increment_counter_by_2():
+    print(request.form)
+    session['counter'] += 2
+    return redirect('/')
+
+@app.route('/increase_var/', methods=['POST'])
+def increment_counter_by_var():
+    print(request.form)
+    input = request.form["number_input"]
+    session['counter'] += input
+    return redirect('/')
+
 @app.route('/reset')
 def reset_counters():
-    session.clear('counter')
+    session.pop('counter')
     return redirect('/')
 
 @app.route('/destroy_session')

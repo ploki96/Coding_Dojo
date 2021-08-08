@@ -8,12 +8,18 @@
     <title>Counter</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <h1>Counter</h1>
         <h2>{{session['counter']}} time(s)</h2>
-        <div>
-            <a href="/increase">Increase 1</a>
-            <a href="/reset">Reset</a>
+        <h2>Page visited {{session['visits']}} time(s)</h2>
+        <div id=functions>
+            <a class="function" href="/increase">Increase 1</a>
+            <a class="function" href="/increase2">Increase 2</a>
+            <form class="function" action='/guess' method='POST'>
+                <input type="text" name="number_input" placeholder="Increase By">
+                <input type="submit" name="submit_button" value="submit">
+            </form>
+            <a class="function" href="/reset">Reset</a>
 
         </div>
 
