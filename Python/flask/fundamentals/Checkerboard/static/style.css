@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first {
+    height:50px;
+    width: 50px;
+}
+
+.second {
+    height:50px;
+    width: 50px;
+}
+
+#board {
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    display: inline-block;
+}
+
+#title_box {
+    height: 100px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+#title {
+    font-size: larger;
+}
