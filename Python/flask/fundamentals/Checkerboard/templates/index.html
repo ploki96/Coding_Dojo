@@ -9,17 +9,17 @@
 </head>
 <body>
     <div id="container">
-        <div id="title_box">
-            <h1 id="title"></h1>
+        <div id="title_box" style="background-color:{{color1}};">
+            <h1 id="title" style="color:{{color2}};">Checkerboard</h1>
         </div>
-        <div>
+        <div id="board">
             {% for i in range(0,x) %} 
-                <div>
+                <div class="row">
                 {% for j in range(0,y) %}
                     {% if checker_board[i][j] == 0 %}
-                        <div class="first"></div>
+                        <div class="first" style="background-color:{{color1}};"></div>
                     {% else: %}
-                        <div class="second"></div>
+                        <div class="second" style="background-color:{{color2}};"></div>
                     {% endif %}
                 {% endfor %}
                 </div>
