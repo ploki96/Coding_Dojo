@@ -5,32 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Dojo Survey Index</title>
 </head>
 <body>
     <div id="container">
         <h1>Dojo Survey</h1>
-        <form action='/results' method='GET'>
-            <label>Your Name: </label>
+        <form action='/results' method='POST'>
+            <label id="name">Your Name:  <span>{{name_plate}}</span></label>
             <input type="text" name="user_name" id="user_name">
+            <p></p>
 
             <label for="location">Dojo Location: </label>
                 <select name="location" id="location">
-                    <option value="new_york" name="location">New York</option>
-                    <option value="virginia" name="location">Virginia</option>
-                    <option value="ohio" name="location">Ohio</option>
-                    <option value="illinois" name="location">Illinois</option>
-                    <option value="florida" name="location">Florida</option>
+                    <option value="New York" name="location">New York</option>
+                    <option value="Virginia" name="location">Virginia</option>
+                    <option value="Ohio" name="location">Ohio</option>
+                    <option value="Illinois" name="location">Illinois</option>
+                    <option value="Florida" name="location">Florida</option>
                 </select>
 
-            <label for="language">Favorite Language: </label>
-                <select name="language" id="language">
-                    <option value="python">Python</option>
-                    <option value="html">HTML</option>
-                    <option value="css">CSS</option>
-                    <option value="javascript">Javascript</option>
-                    <option value="mern">MERN</option>
-                </select>
+            <input type="radio" id="html" name="language" value="HTML">
+                <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="language" value="CSS">
+                <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            <input type="radio" id="css" name="language" value="CSS">
+                <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+
+            <input type="checkbox" id="nuggies" name="nuggies" value="Yes">
+                <label for="nuggies">Dino Nuggies?</label><br>
+            
+            <input type="checkbox" id="nuggies2" name="nuggies" value="No">  <!-- maybe?-->
+                <label for="nuggies">Chikkie Nuggies?</label><br>
 
             <label for="comment">Comment: </label>
             <input id="comment" type="text" name="comment" placeholder="optional">
