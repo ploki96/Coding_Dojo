@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Dojo Survey</h1>
+        {% with messages = get_flashed_messages() %}     
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p>                   
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action='/input' method='POST'>
+            <label id="name">Your Name: </label>
+            <input type="text" name="name" id="name">
+
+            <label for="location">Dojo Location: </label>
+                <select name="location" id="location">
+                    <option value="-1" name="location">Pick a Location</option>
+                    <option value="New York" name="location">New York</option>
+                    <option value="Virginia" name="location">Virginia</option>
+                    <option value="Ohio" name="location">Ohio</option>
+                    <option value="Illinois" name="location">Illinois</option>
+                    <option value="Florida" name="location">Florida</option>
+                </select>
+
+            <label for="language">Dojo Language: </label>
+                <select name="language" id="language">
+                    <option value="-1" name="language">Pick a Language</option>
+                    <option value="Python" name="language">Python</option>
+                    <option value="MERN" name="language">MERN</option>
+                    <option value="JAVA" name="language">JAVA</option>
+                    <option value="HTML" name="language">HTML</option>
+                    <option value="CSS" name="language">CSS</option>
+                </select>
+
+            <label for="comment">Comment: </label>
+                <input id="comment" type="text" name="comment" placeholder="optional">
+
+            <input type="submit" id="submit" name="submit">
+        </form>
+    </div>
+</body>
+</html>
+
