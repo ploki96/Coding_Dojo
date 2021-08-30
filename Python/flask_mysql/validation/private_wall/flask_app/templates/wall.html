@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>CodingDojo Wall</h1>
+        <span>
+            <h2>Welcome, {{user.first_name}}!</h2>
+            <a href="/logout">Log Out</a>
+        </span>
+    </nav>
+
+    <div id="container">
+        <div id="left_half">
+            <p>{{user.messages_for_user.count(user.messages_for_user)}} Message(s) for You</p>
+            {% for message in user.messages_for_user %}
+            <div>
+                    {{senders[message].first_name}}
+                    {{message.text}}
+            </div>
+            {% endfor %}
+        </div>
+        <div id="right_half">
+            <p>Send Messages</p>
+            {% for user in users %}
+            <div>
+                <form action="" method="POST">
+                    <label>{{user.first_name}}</label>
+                    <input type="text">
+                    <input type="submit" value =""
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+
