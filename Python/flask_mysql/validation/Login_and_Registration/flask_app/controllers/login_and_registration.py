@@ -17,21 +17,19 @@ def login():
 @app.route('/login/process', methods=['POST'])
 def login_process():
     data = {
-        'username': request.form['username']
+        'email': request.form['email']
     }
-    user = User.check_username(data)
+    user = User.check_email(data)
     if not user:
-        print("******************************")
-        flash('WRONG USERNAME YOU DUMMY')
+        flash('WRONG EMAIL YOU DUMMY')
         return redirect ('/login')
     if not bcrypt.check_password_hash(user.password, request.form['password']):
-        print("+++++++++++++++++++++++++++++++++")
         flash('WRONG PASSWORD YOU DUMMY')
         return redirect ('/login')
     if "username" not in session:
-        session['username'] = ""
-    session['username'] = request.form['username']
-    # session['username'] = user.username  ASK RYAN OR TA
+        session['email'] = ""
+    # session['username'] = request.form['username']  ASK RYAN OR TA
+    session['email'] = user.email 
     return redirect('/success')
 
 @app.route('/add')
@@ -48,7 +46,6 @@ def creating_user():
         'first_name': request.form['first_name'],
         'last_name': request.form['last_name'],
         'email': request.form['email'],
-        'username': request.form['username'],
         'password': request.form['password']
     }
     if request.form['password'] != request.form['confirmation']:

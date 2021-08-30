@@ -5,9 +5,10 @@ import re
 
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-PASSWORD_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]{8,45}$')
-USERNAME_REGEX = re.compile(r'^[a-zA-Z0-9._-]{2,45}$')
-NAME_REGEX = re.compile(r"^[A-Z]{1}[\w. '-]{1,44}$") 
+PASSWORD_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]{8,255}$')
+USERNAME_REGEX = re.compile(r'^[a-zA-Z0-9._-]{2,255}$')
+NAME_REGEX = re.compile(r"^[A-Z]{1}[\w. '-]{1,254}$") 
+
 
 class User:
     def __init__(self, data):
@@ -15,19 +16,18 @@ class User:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
-        self.username = data['username']
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
     
     @classmethod
     def add_user(cls, data):
-        query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(username)s, %(password)s);"
+        query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
         return connectToMySQL('login_and_registration_schema').query_db(query, data)
 
     @classmethod
-    def check_username(cls, data):
-        query = "SELECT * FROM users WHERE username = %(username)s;"
+    def check_email(cls, data):
+        query = "SELECT * FROM users WHERE email = %(email)s;"
         results = connectToMySQL('login_and_registration_schema').query_db(query, data)
         if len(results) < 1:
             return False
@@ -43,11 +43,11 @@ class User:
             flash('Email address already used.')
             is_valid = False
 
-        query = "SELECT * FROM users WHERE username = %(username)s;"
-        results_username = connectToMySQL('login_and_registration_schema').query_db(query, input)
-        if len(results_username) >= 1:
-            flash('Username is already taken.')
-            is_valid = False
+        # query = "SELECT * FROM users WHERE username = %(username)s;"
+        # results_username = connectToMySQL('login_and_registration_schema').query_db(query, input)
+        # if len(results_username) >= 1:
+        #     flash('Username is already taken.')
+        #     is_valid = False
 
         if not NAME_REGEX.match(input['first_name']): 
             flash("Invalid first name!")
@@ -61,9 +61,9 @@ class User:
             flash("Invalid email!")
             is_valid = False
 
-        if not USERNAME_REGEX.match(input['username']): 
-            flash("Invalid username!")
-            is_valid = False
+        # if not USERNAME_REGEX.match(input['username']): 
+        #     flash("Invalid username!")
+        #     is_valid = False
         
         if not PASSWORD_REGEX.match(input['password']): 
             flash("Invalid password, are you a Justin?!")
