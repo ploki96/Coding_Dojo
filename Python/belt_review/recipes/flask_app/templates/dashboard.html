@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Welcome {{user.first_name}}</h1>
+            <span>
+                <a href="/recipes/new">Create</a>
+                <a href="/logout">Logout</a>
+            </span>
+        </header>
+        <div>
+            {% with messages = get_flashed_messages() %}   
+                {% if messages %}                           
+                    {% for message in messages %}            
+                    <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Under 30 min?</th>
+                    <th>Actions</th>
+                </thead>
+                {% for recipe in recipes %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    {% if recipe.thirtymin == 'Y' %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+                    <td>
+                        <a href="/recipes/{{recipe.id}}">view instructions</a>
+                        {% if recipe.user_id == user.id %}
+                        <a href="/recipes/edit/{{recipe.id}}">edit</a>
+                        <a href="/recipes/delete/{{recipe.id}}">delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
