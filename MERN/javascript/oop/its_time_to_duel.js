@@ -13,10 +13,11 @@ class Unit extends Card {
     }
     attack(target){
         if(target instanceof Unit){
-            target.resistance -= this.power;
+            target.resilience -= this.power;
         }else {
             throw new Error("Targets gotta be a unit")
         }
+        // red_belt_ninja.attack(black_belt_ninja);
         
     }
 }
@@ -30,14 +31,16 @@ class Effect extends Card {
     }
     play(target){
         if(target instanceof Unit) {
-            if (this.stat == 'resilience'){
-                target.resilience += this.magnitude;
-            } else {
-                target.power += this.magnitude;
-            }
+            target[this.stat] += this.magnitude
+            // if (this.stat == 'resilience'){
+            //     target.resilience += this.magnitude;
+            // } else {
+            //     target.power += this.magnitude;
+            // }
         }else {
             throw new Error("Targets gotta be a unit");
         }
+        // Unit.(Effect.stat) += Effect.magnitude
     }
 }
 
