@@ -19,26 +19,28 @@ const UserForm = (props) => {
             <form onSubmit={createUser}>
                 <div>
                     <label>First Name: </label>
-                    <input type="text" onchange={ (e) => setFirstName(e.target.value) } />
+                    <input type="text" onChange={ (e) => setFirstName(e.target.value) } />
                 </div>
                 <div>
                     <label>Last Name: </label>
-                    <input type="text" onchange={ (e) => setLastName(e.target.value) } />
+                    <input type="text" onChange={ (e) => setLastName(e.target.value) } />
                 </div>
                 <div>
                     <label>Email Address: </label>
-                    <input type="email" onchange={ (e) => setEmail(e.target.value) } />
+                    <input type="email" onChange={ (e) => setEmail(e.target.value) } />
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input type="password" onchange={ (e) => setPassword(e.target.value) } />
+                    <input type="password" onChange={ (e) => setPassword(e.target.value) } />
                 </div>
                 <div>
                     <label>Confirm Password: </label>
-                    <input type="password" onchange={ (e) => setConfirmPassword(e.target.value) } />
+                    <input type="password" onChange={ (e) => setConfirmPassword(e.target.value) } />
                 </div>
                 <input type="submit" value="Create User" />
             </form>
+
+            <p>Results</p>
             <p>First Name: {firstName}</p>
             <p>Last Name: {lastName}</p>
             <p>Email: {email}</p>
