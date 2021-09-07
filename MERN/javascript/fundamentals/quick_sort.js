@@ -1,30 +1,17 @@
 // partition
 function partition(arr, front, end){
-    var index = Math.floor(Math.random()*(arr.length -1));
+    var index = Math.floor((front+end)/2);
     var pivot = arr[index];
-    console.log("index: " + index)
-    console.log("pivot: "+ pivot);
     var i = front;
     var j = end;
     while (i<j){
-        // [3, 2, 8, 87, 37, 6, 4, 57]
         while (arr[i]< pivot){
-            console.log("i: "+i)
-            console.log("arr[i]: "+arr[i])
-            console.log("1st while loop")
             i++;
         }
         while (arr[j]> pivot){
-            console.log("j: "+j)
-            console.log("arr[j]: "+arr[j])
-            console.log("2nd while loop")
             j--;
         }
-        // if(arr[i]>arr[j])
-        // if (arr[i]>pivot && arr[j]<pivot){
-            // console.log("i: "+i, "j: "+j)
-            // console.log("if statement")
-        // if (i!=index && j!=index){
+
         if(arr[i]>arr[j]){
             temp = arr[i];
             arr[i] = arr[j];
@@ -44,8 +31,6 @@ function partition(arr, front, end){
         
         }
     }
-    console.log("return j: "+j)
-    console.log(arr)
     return index;
 }
 
@@ -67,8 +52,8 @@ function quicksort(arr, front, end){
     return arr;
 }
 
-testarr = [3, 2, 8, 87, 37, 6, 4, 57]
-newarr = quicksort(testarr, 0, testarr.length - 1)
+testarr = [3, 2, 8, 87, 37,12, 18, 5, 23, 99, 6, 4, 57]
+newarr = quicksort(testarr, 0, testarr.length -1)
 // newarr = partition(testarr, 0, testarr.length - 1)
 console.log(newarr)
 
