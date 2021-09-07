@@ -1,0 +1,26 @@
+Notes on supplementary lectuers posted by Mike
+
+W2D1 Submit Object to Array in State
+
+-Step 1: 
+    - Set up new component, Form.js
+    - The form state is going to live in the form component and not App.js. Why?
+        - It is b/c App.js does not need the form state. It needs the character state b/c both components use it.
+    - Since our form will eventually submit something, the only thing obSubmit needs to do is have access to all the characters we already have and setCharacters.
+        - We are going to import characters and setCharacters.
+            - We are going to pull this state INSIDE of the Form component.
+            - This is done in App.js:
+                - <Form characters={characters} setCharacters={setCharacters}
+                - State and setStates can be given to components but needs to be explicitly passed down to other components.
+
+- Step 2:
+    - Create state for our form
+        - const [form, setForm] = useState("")
+            - useState is set to an empty string by default.
+    - Make an onChange for our form.
+
+- Step 3:
+    - Create a function/method for submitting our form.
+    - event.preventDefault --> When you hit submit on any normal form on a webpage, it expects it is going to take itself to some action.
+        - This prevents the page from refreshing/trying to go to another page.
+    - Give form the onSubmitHandler function

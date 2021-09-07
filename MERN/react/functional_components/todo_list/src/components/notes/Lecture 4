@@ -1,0 +1,45 @@
+Notes on supplementary lectuers posted by Mike
+
+W2D1 Change an Object in Array in State
+
+    - We want to be able to manipulate the checkbox, as well as the rest of our form
+        - In this example, we want to make Yoshi or any character EVIL.
+    - If we know which item we clicked on (aka index), we can take it from there.
+
+- Step 1:
+    - Create a function/method inside App.js (could be placed in CharacterBox.js)
+        - To ensure that the function is getting the correct thing:
+            - Create a preliminary function that ensures that you are getting what you want.
+            - For example:
+                - const onCheckBox = (idx) => {
+                    console.log(idx)
+                    consoel.log(characters[idx].name)
+                }
+            - This function is console logging the index of the object where you are clicking on the checkbox, as well as the object's name.
+            - ALWAYS test you function to ensure that it is properly hooked up and getting you what you intend to (aka CONSOLE.LOG EVERYTHING)
+                // const onCheckBox = (idx) => {
+                    // console.log(idx);
+                    // console.log(characters[idx].name)
+                }
+                // The lines above are checking the index of the thing where we clicked on the checkbox.
+    - Pass over this onCheckBox function to the CharacterBox b/c the CharacterBox is going to actually attach this function over to the checkbox.
+        - return <CharacterBox onCheckBox={onCheckBox}... />
+    - We also want to make sure that on that specific checkbox, we pass in the function.
+        - onChange={() => props.onCheckBox(props.idx)} on the input tag inside CharacterBox.
+
+- Step 2: 
+    - We need to now grab the information about whichever character we want.
+    - const temp = {
+        ...characters[i],
+        isGood: !characters[i].isGood
+    }
+    - Grabs the value that it was, inverts it, and now we have this temp object which is the thing that we want to place into our characters list.
+
+- Step 3:
+    - setCharacters (an array)
+    - We want to do three things now:
+        - Anytime you are manipulating an array in state, you want to add things that come before your object, add the object, and the objects/items that come after your object.
+        - If you are deleting, you just don't put in the part where you include that object again. It just adds things before and after, and not the current thing.
+            - Delete button is similar to the onCheckBox.
+
+

@@ -1,0 +1,44 @@
+Notes on supplementary lectures posted by Mike
+
+PROPER PLANNING IS ABSOLUTELY NECESSARY!
+
+W2D1 Planning Out Building a React App
+
+- First figure out your components
+    - What can be its own component?
+        - Part of page that is repeatable and sort of complex
+        - One component can be the 'box/rectangle' that holds the information.
+        - Another component can be the input area.
+
+- What should be held in state/What should we add as state?
+    - Each name has some information that is associated with it.
+        - For example, Hulk has a boolean value, attributes/traits, etc.
+        - State of charaters would be an array that holds objects.
+        - Charaters = [
+            {
+            name: '',
+            isGood: 'boolean',
+            powers: []
+            }
+        ]
+    - Each of our characters would match this object and would be a list of these objects.
+        - The reason behind this is to help with mapping and adjusting.
+        - We can just send over each object into that component, and the component will handle it (displaying it).
+            - Would be easy to initialize the values (add a name, rest of the information is added along as we go.)
+
+- Plan for setting this up
+    - App.js:
+        - Should have our characters state live here.
+
+    - Form.js:
+        - Add to list
+            - Will have the place for us to put in the form input.
+            - All we need to do is pass in the things it needs.
+            - Will have its own form state.
+            - We will pass in our setCharacters into our form.js.
+        - Display list
+            - In our main display, our characters state will be mapped out here.
+
+        - We are putting our charater state in App.js because our form needs to add to the character's list and display the character's list.
+        - Therefore, since these two sibling components (adding and displaying) need to access the same state, then our state should just live in the parent (App.js).
+

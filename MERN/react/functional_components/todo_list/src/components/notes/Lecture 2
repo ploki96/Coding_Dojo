@@ -1,0 +1,31 @@
+Notes on supplementary lectuers posted by Mike
+
+W2D1 Beginning an App: State, Mapping State, and Building a Component
+
+- Consider two things first:
+    - State
+    - Component
+
+- Step 1:
+    - Get react app up and running (import, export, etc.)
+    - Get State and CharacterBox set up
+        - Both are essentially doing similar things.
+        - They depend on each other:
+            - State has to hold information for the CharacterBox
+            - CharacterBox has to display the information in State
+    - State (App.js):
+        - We set useState equal to an empty array by default (we add things later)
+        - BUT, when dealing with project where you map things out and intention is to manipulate/add things later, just put in some data at first.
+            - Add data based on how you want things to look.
+
+- Step 2:
+    - Map out our character state.
+    - When mapping something out you pick the array you want to map out. In this case, it is our character state.
+        - Pass in two parameters, character/item and i.
+            - character/item is singular b/c map is going to display component for every individual character/item.
+        - return CharacterBox but also pass in character={character} & key={i} & idx={i}.
+            - For character = {character},
+                - The left character is how we name the prop --> props.character
+                - The right {character} is how we insert the value.
+    - Next, pass in the remaining things (checkbox, powers, etc.)
+    - Side note: Review ternary operators
