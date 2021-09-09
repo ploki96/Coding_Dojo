@@ -1,0 +1,11 @@
+GET https://pokeapi.co/api/v2/pokemon/25
+
+GET https://pokeapi.co/api/v2/pokemon/ditto
+
+GET https://pokeapi.co/api/v2/generation/4
+
+GET https://pokeapi.co/api/v2/ability/slam
+
+GET https://pokeapi.co/api/v2/type/poison
+
+done through Postman, possible, maybe, eventually got tiring so rest done through PokeAPI. nut a lil effort was made for POSTMAN
