@@ -191,6 +191,9 @@ Python/belt_exams/
 
 TA_quick_sort.js
 
+node_modules/
+HelloExpress
+
 #ZIP FILES
 *.zip
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,python
