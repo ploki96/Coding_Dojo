@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const People = (props) => {
     const {num} = useParams();
     const [person, setPerson] = useState({name: "", height:"", mass:"", hair_color:"", skin_color:""});
+    const history = useHistory();
 
     useEffect(() => {
         axios.get("https://swapi.dev/api/people/" + num)
@@ -12,6 +13,10 @@ const People = (props) => {
                 console.log(response)
                 setPerson(response.data)
             })
+            .catch(err => {
+                console.log("error response:", err);
+                history.push("/error");
+            });
     }, [num])
 
     return(

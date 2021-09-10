@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const Planets = (props) => {
     const {num} = useParams();
     const [planet, setPlanet] = useState({climate:"", terrain:"", surface_water:"", population:""});
+    const history = useHistory();
 
     useEffect(() => {
         axios.get("https://swapi.dev/api/planets/" + num)
@@ -12,6 +13,10 @@ const Planets = (props) => {
                 console.log(response)
                 setPlanet(response.data)
             })
+            .catch(err => {
+                console.log("error response:", err);
+                history.push("/error");
+            });
     }, [num])
 
     return(

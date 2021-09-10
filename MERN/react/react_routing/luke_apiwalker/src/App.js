@@ -5,6 +5,7 @@ import {BrowserRouter,Switch, Route, Link} from "react-router-dom"
 import Planets from './views/planets';
 import People from './views/people';
 import Home from './views/home';
+import Error from './views/error';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route exact path="/planets/:num">
             <Planets/>
+          </Route>
+          <Route exact path="/error">
+            <Error/>
           </Route>
         </Switch>
       </BrowserRouter>
