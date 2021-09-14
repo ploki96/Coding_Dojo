@@ -78,7 +78,5 @@ Remove the 'lucky_number' field.
 
 Add a 'updated_on' field, and set the value as the current date.
     db.students.updateMany({}, {$set: {$currentDate: {updated_on: {$type: "date"}}}})
-
     db.students.updateMany({}, {$set: {$currentDate: {updated_on: true}}})
-
     db.students.updateMany({}, {$currentDate: {updated_on:{$type: "date"}}})
