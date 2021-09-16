@@ -16,7 +16,12 @@ const Form = (props) => {
             price,
             description
         })
-            .then(res=>console.log(res))
+            .then(res=>
+                {console.log(res)
+                setTitle('')
+                setPrice(0)
+                setDescription('')
+                })
             .catch(err=>console.log(err))
     }
 

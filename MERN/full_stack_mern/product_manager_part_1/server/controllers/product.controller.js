@@ -8,7 +8,7 @@ module.exports.findAllProducts = (req, res) => {
 }
 
 module.exports.findProduct = (req, res) => {
-    Products.findOne({ _id: req.params._id})
+    Products.findOne({ _id: req.params.id})
         .then(singleProduct => res.json({results:singleProduct}))
         .catch(err => res.json({ message: 'could not find specific product', err}))
 }
@@ -21,7 +21,7 @@ module.exports.createProduct = (req, res) => {
 }
 
 module.exports.updateProduct = (req, res) => {
-    Products.findOneAndUpdate({_id: req.params._id},
+    Products.findOneAndUpdate({_id: req.params.id},
         req.body,
         {new:true, runValidators: true})
         .then(singleProduct => res.json({results:singleProduct}))
@@ -29,7 +29,7 @@ module.exports.updateProduct = (req, res) => {
 }
 
 module.exports.deleteProduct = (req, res) => {
-    Products.deleteOne({_id: req.params._id})
+    Products.deleteOne({_id: req.params.id})
         .then(deletedProduct => res.json({results: deletedProduct}))
         .catch(err => res.json({message: 'could not delete this product', err}))
 }

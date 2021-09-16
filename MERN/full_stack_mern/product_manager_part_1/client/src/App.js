@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import {BrowserRouter,Switch, Route, Link} from "react-router-dom"
 import SingleProduct from './views/SingleProduct';
+import Update from './views/Update';
 
 function App() {
   useEffect(()=>{
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path= "/:id">
             <SingleProduct />
+          </Route>
+          <Route exact path= "/:id/update">
+            <Update />
           </Route>
         </Switch>
       </BrowserRouter>

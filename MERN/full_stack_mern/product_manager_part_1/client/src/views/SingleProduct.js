@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 
 const SingleProduct = (props) => {
     const [singleProduct, SetSingleProduct] = useState({});
@@ -18,6 +18,7 @@ const SingleProduct = (props) => {
             <h1>{singleProduct.title}</h1>
             <p>Price: {singleProduct.price}</p>
             <p>Description: {singleProduct.description}</p>
+            <Link to={`/${id}/update`}>Edit</Link>
         </div>
     )
 }
