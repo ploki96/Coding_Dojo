@@ -2,7 +2,7 @@ console.log('I am in the controller')
 const Authors = require('../models/author.model');
 
 module.exports.findAllAuthors = (req, res) => {
-    Authors.find()
+    Authors.find({}).sort({name:1})
         .then(allAuthors => res.json({ results:allAuthors}))
         .catch(err => res.json({ message: 'error on find all authors', err }));
 }
@@ -14,11 +14,21 @@ module.exports.findAuthor = (req, res) => {
 }
 
 module.exports.createAuthor = (req, res) => {
-    console.log(req.body)
-    Authors.create(req.body)
-        .then(author => res.json({ results:author}))
-        .catch(err => res.json({ message: 'could not create author', err }));
-}
+    // Authors.find({name: req.body.name}).then((user => {
+    //     console.log('user ' + req.body.name )
+    //     console.log('user.name ' + user )
+    //     if (user.count < 1){
+        Authors.create(req.body)
+            .then(author => res.json({ results:author}))
+            .catch(err => res.json({ message: 'could not create author', err }));
+        // }
+        // else {
+        //     console.log('else statement')
+        //     res.json({err: {errors: {message: "Name must be Unique"}}})
+        // }
+    }
+//     ))
+// }
 
 module.exports.updateAuthor = (req, res) => {
     Authors.findOneAndUpdate({_id: req.params.id},

@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path = "/">
+          <Route exact path = "/allauthors">
             <AllAuthors />
           </Route>
           <Route exact path="/add">

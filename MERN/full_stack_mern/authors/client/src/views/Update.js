@@ -32,7 +32,7 @@ const Update = (props) => {
     return (
         <div>
             <h1>Favorite Authors</h1>
-            <Link to={`/`}>Home</Link>
+            <Link to={`/allauthors`}>Home</Link>
             <p>Edit this author</p>
             <form onSubmit={updateAuthor}>
                 <p>
