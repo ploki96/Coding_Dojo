@@ -202,3 +202,24 @@ HelloExpress
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+MERN/card_game/package-lock.json
+MERN/card_game/package.json
+MERN/card_game/server.js
+MERN/card_game/client/.gitignore
+MERN/card_game/client/package-lock.json
+MERN/card_game/client/package.json
+MERN/card_game/client/README.md
+MERN/card_game/client/public/favicon.ico
+MERN/card_game/client/public/index.html
+MERN/card_game/client/public/logo192.png
+MERN/card_game/client/public/logo512.png
+MERN/card_game/client/public/manifest.json
+MERN/card_game/client/public/robots.txt
+MERN/card_game/client/src/App.css
+MERN/card_game/client/src/App.js
+MERN/card_game/client/src/App.test.js
+MERN/card_game/client/src/index.css
+MERN/card_game/client/src/index.js
+MERN/card_game/client/src/logo.svg
+MERN/card_game/client/src/reportWebVitals.js
+MERN/card_game/client/src/setupTests.js
