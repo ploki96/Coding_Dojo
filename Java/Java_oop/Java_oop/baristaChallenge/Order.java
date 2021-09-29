@@ -40,7 +40,7 @@ public class Order {
     }
 
     public void addItem(Item Item){
-        items.add(Item);
+        this.items.add(Item);
     }
 
     public String getStatusMessage() {
