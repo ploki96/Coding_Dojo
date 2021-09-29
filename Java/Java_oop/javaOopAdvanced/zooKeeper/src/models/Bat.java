@@ -8,6 +8,8 @@ public class Bat extends Mammal{
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	
 	public void fly() {
 		System.out.println("Look at me. I'm a bat. I am flying");
 		int currentEnergy = this.getEnergyLevel();
@@ -17,7 +19,7 @@ public class Bat extends Mammal{
 	public void eathumans() {
 		System.out.println("Look at me. I'm a bat. I eat humans");
 		int currentEnergy = this.getEnergyLevel();
-		this.setEnergyLevel(currentEnergy - 25); 
+		this.setEnergyLevel(currentEnergy + 25); 
 		
 	}
 	
