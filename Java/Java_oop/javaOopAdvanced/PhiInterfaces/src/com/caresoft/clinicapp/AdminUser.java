@@ -2,7 +2,7 @@ package com.caresoft.clinicapp;
 import java.util.Date;
 import java.util.ArrayList;
 
-public class AdminUser implements PHIAdminCompliant, PHICompliantUser {
+public class AdminUser extends User implements PHIAdminCompliant, PHICompliantUser {
 	private Integer employeeID;
     private String role;
     private ArrayList<String> securityIncidents;

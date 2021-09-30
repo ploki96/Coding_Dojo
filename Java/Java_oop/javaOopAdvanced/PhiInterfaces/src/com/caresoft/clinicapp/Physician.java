@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Physician extends User {
+public class Physician extends User implements PHIAdminCompliant, PHICompliantUser {
     
     private HashSet<Patient> patients;
     private ArrayList<String> securityIncidents;
@@ -39,6 +39,26 @@ public class Physician extends User {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public HashSet<Patient> getPatients() {
+		return patients;
+	}
+
+
+	public void setPatients(HashSet<Patient> patients) {
+		this.patients = patients;
+	}
+
+
+	public ArrayList<String> getSecurityIncidents() {
+		return securityIncidents;
+	}
+
+
+	public void setSecurityIncidents(ArrayList<String> securityIncidents) {
+		this.securityIncidents = securityIncidents;
+	}
+
 
 	@Override
 	public boolean assignPin(int pin) {

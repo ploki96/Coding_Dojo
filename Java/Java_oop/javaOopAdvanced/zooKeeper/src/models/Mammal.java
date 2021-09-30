@@ -5,6 +5,7 @@ public class Mammal {
 	
 	
 
+	
 	public Mammal() {
 		super();
 	}
@@ -21,7 +22,5 @@ public class Mammal {
 	public void setEnergyLevel(int energyLevel) {
 		this.energyLevel = energyLevel;
 	}
-	
-
 	
 }

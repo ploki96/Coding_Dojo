@@ -2,7 +2,7 @@ package com.caresoft.clinicapp;
 
 import java.util.ArrayList;
 
-public class Patient implements PHICompliantUser, PHIAdminCompliant {
+public class Patient extends User implements PHICompliantUser, PHIAdminCompliant {
 	
     private String firstName;
     private String lastName;

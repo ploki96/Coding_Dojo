@@ -1,8 +1,9 @@
 package com.caresoft.clinicapp;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class ClinicalScheduler implements PHIAdminCompliant, PHICompliantUser {
+public class ClinicalScheduler implements PHIAdminCompliant {
 	
     private ArrayList<AdminUser> adminUsers; 
     private HashSet<Physician> doctors;
@@ -18,7 +19,16 @@ public class ClinicalScheduler implements PHIAdminCompliant, PHICompliantUser {
         ePHIBreaches.add(report);
     }
     
-    public boolean bookAppointmentFor(Patient patient, Physician doctor, Date apptDate) {
+    public ClinicalScheduler(ArrayList<AdminUser> adminUsers, HashSet<Physician> doctors,
+			ArrayList<Appointment> appointments, ArrayList<String> ePHIBreaches) {
+		super();
+		this.adminUsers = adminUsers;
+		this.doctors = doctors;
+		this.appointments = appointments;
+		this.ePHIBreaches = ePHIBreaches;
+	}
+
+	public boolean bookAppointmentFor(Patient patient, Physician doctor, Date apptDate) {
         boolean success = false;
         // You see other code here 
     	// (no need to implement anything here for this assignment)
@@ -35,11 +45,11 @@ public class ClinicalScheduler implements PHIAdminCompliant, PHICompliantUser {
     
     
 
-	@Override
-	public boolean assignPin(int pin) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean assignPin(int pin) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 
 	public ArrayList<AdminUser> getAdminUsers() {
 		return adminUsers;
@@ -73,11 +83,11 @@ public class ClinicalScheduler implements PHIAdminCompliant, PHICompliantUser {
 		this.ePHIBreaches = ePHIBreaches;
 	}
 
-	@Override
-	public boolean isAuthorized(Integer confirmedAuthID) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean isAuthorized(Integer confirmedAuthID) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 
 	@Override
 	public ArrayList<String> reportSecurityIncidents() {
