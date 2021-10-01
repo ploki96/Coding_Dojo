@@ -1,0 +1,30 @@
+package com.timothywang.fruityLoops.models;
+
+public class Fruit {
+	public String name;
+	public Double price;
+	
+	public Fruit(String name, Double price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	
+	
+}
