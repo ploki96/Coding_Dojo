@@ -7,7 +7,10 @@ public class AdminUser extends User implements PHIAdminCompliant, PHICompliantUs
     private String role;
     private ArrayList<String> securityIncidents;
     
-	public Integer getEmployeeID() {
+
+
+    
+    public Integer getEmployeeID() {
 		return employeeID;
 	}
 	public void setEmployeeID(Integer employeeID) {
@@ -25,9 +28,9 @@ public class AdminUser extends User implements PHIAdminCompliant, PHICompliantUs
 	public void setSecurityIncidents(ArrayList<String> securityIncidents) {
 		this.securityIncidents = securityIncidents;
 	}
-
-    
-    public void newIncident(String notes) {
+	
+	
+	public void newIncident(String notes) {
         String report = String.format(
             "Datetime Submitted: %s \n,  Reported By ID: %s\n Notes: %s \n", 
             new Date(), this.id, notes
