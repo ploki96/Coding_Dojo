@@ -3,11 +3,9 @@ package models;
 public class Bat extends Mammal{
 
 	public Bat() {
-		super();
-		super.setEnergyLevel(300);
+		this.setEnergyLevel(300);
 		// TODO Auto-generated constructor stub
 	}
-	
 	
 	
 	public void fly() {

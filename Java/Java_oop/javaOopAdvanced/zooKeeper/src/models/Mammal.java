@@ -7,11 +7,9 @@ public class Mammal {
 
 	
 	public Mammal() {
-		super();
 	}
 
 	public Mammal(int energyLevel) {
-		super();
 		this.energyLevel = energyLevel;
 	}
 
