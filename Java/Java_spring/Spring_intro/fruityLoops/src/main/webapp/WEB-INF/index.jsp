@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +21,7 @@
 					<c:out value="${oneFruit.name}"></c:out>
 				</td>
 				<td>
-					<c:out value="<fmt:formatNumber type="number" minFractionDigits="2" value="${oneFruit.price}"/>"></c:out>
+					<c:out value="${oneFruit.price}"></c:out>
 				</td>
 			</tr>
 		</c:forEach>
