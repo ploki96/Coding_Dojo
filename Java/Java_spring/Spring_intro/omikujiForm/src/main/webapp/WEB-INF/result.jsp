@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>Here's your Omukuji!</h1>
+	<p><c:out value="${output}"/></p>
 </body>
 </html>
