@@ -9,7 +9,7 @@ import com.timothywang.books.models.Book;
 import com.timothywang.books.repositories.BookRepository;
 
 @Service
-public class BookService {
+public class BookService{
     // adding the book repository as a dependency
     private final BookRepository bookRepository;
     
