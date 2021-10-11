@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>Book Club</h1>
+	<p>A place for friends to share thoughts on books</p>
 	<form:form action="/register" method="post" modelAttribute="newUser">
         <div class="form-group">
             <label>User Name:</label>

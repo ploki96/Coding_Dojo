@@ -9,6 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>You logged in </h1>
+<h1>You logged in <c:out value="${user.name}"/></h1>
 </body>
 </html>
