@@ -55,6 +55,28 @@ class BST {
         }
         return runner.value;
     }
+
+    size(node = this.root) {
+        if (node == null) return 0;
+        // if (node) {
+            return 1 + this.size(node.left) + this.size(node.right);
+        // }
+
+    }
+
+    contains(value) {
+        var runner = this.root;
+        while (runner != null) {
+            if (runner.value === value) {
+                return true;
+            } else if (runner.value > value) {
+                runner = runner.left;
+            } else {
+                runner = runner.right;
+            }
+        }
+        return false;
+    }
 }
 
 let newBST = new BST();
@@ -62,5 +84,11 @@ newBST.addNode(7);
 newBST.addNode(5);
 newBST.addNode(8);
 newBST.addNode(4);
-console.log(newBST.findMax());
-console.log(newBST.findMin());
+newBST.addNode(1);
+// console.log(newBST.findMax());
+// console.log(newBST.findMin());
+console.log(newBST.contains(1));
+console.log(newBST.contains(8));
+console.log(newBST.contains(2));
+console.log(newBST.size());
+
