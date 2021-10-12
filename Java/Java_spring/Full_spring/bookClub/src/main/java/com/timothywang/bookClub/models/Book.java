@@ -41,6 +41,11 @@ public class Book {
     @JoinColumn(name="user_id")
     private User user;
     
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="borrow")
+    private User user2;
+    
+    
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
