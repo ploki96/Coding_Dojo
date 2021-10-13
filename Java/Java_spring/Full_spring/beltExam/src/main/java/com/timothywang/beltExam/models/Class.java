@@ -19,6 +19,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 //import org.springframework.format.annotation.NumberFormat;
@@ -45,6 +46,7 @@ public class Class {
     private Integer price;
     
     @NotNull(message="Time is required!")
+    @Pattern(regexp="([01]?[0-9]|2[0-3]):[0-5][0-9]", message="input a correct time")
     private String time;
     
     @NotEmpty(message="Description is required!")

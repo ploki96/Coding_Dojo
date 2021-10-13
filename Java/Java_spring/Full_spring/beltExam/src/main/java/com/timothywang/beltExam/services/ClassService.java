@@ -10,16 +10,20 @@ import org.springframework.stereotype.Service;
 import com.timothywang.beltExam.models.Class;
 import com.timothywang.beltExam.repositories.ClassRepository;
 
+
 @Service
 public class ClassService {
+    
 	@Autowired
 	private ClassRepository classRepository;
+	
 	
 	public List<Class> allclasss() {
 		return classRepository.findAll();
 	}
 	
 	public Class createClass(Class classe) {
+		
 		return classRepository.save(classe);
 	}
 	

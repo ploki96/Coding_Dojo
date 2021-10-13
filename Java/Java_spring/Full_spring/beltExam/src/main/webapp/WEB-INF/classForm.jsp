@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
             <label>Time: </label>
-            <form:input type="time" path="time" class="form-control" value="10:10"/>
+            <form:input type="time" path="time" class="form-control" />
             <form:errors path="time" class="text-danger" />
         </div>
         <div class="form-group">
