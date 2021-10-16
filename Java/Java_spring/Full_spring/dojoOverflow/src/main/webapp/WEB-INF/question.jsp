@@ -19,26 +19,27 @@
         </div>
         <div>
             <table>
-                <thead>
-                    <th>Answers</th>
-                </thead>
+                <tr>
+                    <td>Answers</td>
+                </tr>
                 <tbody>
-                 <c:forEach items="${question.answers}" var="answer">
+                 <c:forEach items="${question.answers}" var="an">
                      <tr>
-                         <td><c:out value="${answer.answer}"/></td>
+                         <td><c:out value="${an.answer}"/></td>
                      </tr>
                  </c:forEach>
                 </tbody>
             </table>
             <div>
-                <form:form action="/answers/${question.id}/new" method="POST" modelAttribute="answer">
+            	${question.id}
+                <form:form action="/answers/${question.id}/new" method="POST" modelAttribute="ans">
                 	<form:errors path="*" class="text-danger"/>
                     <div>
                         <h3>Add your answer:</h3>
                     </div>
                     <div>
                         <div>Answer</div>
-                        <form:textarea path="answer" name="answer" cols="30" rows="10"></form:textarea>
+                        <form:input path="answer" ></form:input>
                     </div>
                     <button type="submit">Answer it!</button>
                 </form:form>

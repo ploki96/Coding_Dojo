@@ -4,9 +4,12 @@ import java.util.Arrays;
 
 import javax.validation.Valid;
 
+//import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+//import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,20 +48,26 @@ public class HomeController {
 	}
 	
 	@PostMapping("/answers/{id}/new")
-	public String createAnswer(@PathVariable Long id, @Valid @ModelAttribute("answer") Answer answer, BindingResult result, Model model) {
+	public String createAnswer(@Valid @ModelAttribute("ans") Answer ans,BindingResult result, @PathVariable("id") Long id,  Model model) {
+		System.out.println(ans);
 		if(result.hasErrors()) {
+			System.out.println("in if statement");
 			model.addAttribute("question", qService.findQuestion(id));
 			return "question.jsp";
 		}else {
+		
+			System.out.println("in else statement "+ ans);
 			Question q = qService.findQuestion(id);
-			answer.setQuestion(q);
-			aService.createAnswer(answer);
+			ans.setQuestion(q);
+			aService.createAnswer(ans);
 			return "redirect:/questions/"+id;
 		}
 	}
 	
 	@RequestMapping("/questions/{id}")
-	public String showQuestion(@PathVariable("id") Long id, Model model, @ModelAttribute("answer") Answer answer) {
+	public String showQuestion(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("ans", new Answer());
+		model.addAttribute("a", aService.allAnswers());
 		model.addAttribute("question", qService.findQuestion(id));
 		return "question.jsp";
 	}

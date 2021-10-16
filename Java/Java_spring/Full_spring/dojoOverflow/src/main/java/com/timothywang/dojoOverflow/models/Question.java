@@ -21,6 +21,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 @Entity
 @Table(name="questions")
 public class Question {
@@ -34,6 +35,7 @@ public class Question {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 		name = "tags_questions",
@@ -44,7 +46,7 @@ public class Question {
 	private List<Tag> tags = new ArrayList<Tag>();
 	
 	@OneToMany(mappedBy="question", fetch = FetchType.LAZY)
-	private List<Answer> answers = new ArrayList<Answer>();
+	private List<Answer> answers;
 	
 	public Question() {}
 	
@@ -52,6 +54,19 @@ public class Question {
 		this.setQuestion(question);
 	}
 	
+	
+	
+	public Question(Long id, String question, Date createdAt, Date updatedAt, @Size(max = 3) List<Tag> tags,
+			List<Answer> answers) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.tags = tags;
+		this.answers = answers;
+	}
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
